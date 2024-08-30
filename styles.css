@@ -1,0 +1,15 @@
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px !important;
+  }
+}
+
+a.sponsor {
+  display: inline-block;
+  width: auto;
+}
+
+a.sponsor img {
+  width: auto;
+  height: 120px;
+}
