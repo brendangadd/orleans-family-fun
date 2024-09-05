@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="d-none d-md-block navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <span class="navbar-brand">Orléans Family Fun Day</span>
       </div>
     </nav>
 
     <div class="visually-hidden">
+      <h1>Orléans Family Fun Day</h1>
       <p>
         <strong>SAVE THE DATE – FREE COMMUNITY EVENT!</strong>
         Orleans Family Fun Day.
@@ -84,24 +85,32 @@
                 He'll be moving throughout the event. See if you can spot him!
               `},
               {title: '🏒 Ball Hockey (<abbr title="Bring Your Own Stick!">BYOS</abbr>)', start: '12:30PM', end: '1:30PM', description: `
-                Bring your own stick.
+                <p>
+                  Grab your stick and hit the Barrington Park Rink for a friendly pick-up
+                  ball hockey game.
+                </p>
+                <span class="badge text-bg-primary">Don't forget your stick!</span>
               `},
               {title: '🎸 Monkey Rock Music Show', start: '2:00PM', end: '3:00PM', description: `
-                Head to the stage for 14:00 for an interactive musical performance that's great for kids. Get ready to rock!
+                <p>Head to the stage for 2:00PM for an interactive music show that's great for kids.</p>
+                <p>
+                  Monkey Rock performers will have your kids doing actions, dancing, and even up
+                  on stage playing instruments. Get ready to rock!
+                </p>
               `}
             ]
             for (let i = 0; i < timedAttractions.length; i++) {
               const o = timedAttractions[i]
               document.write(`
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
+                  <h3 class="accordion-header">
                     <button class="accordion-button collapsed" type="button"
                         data-bs-toggle="collapse" data-bs-target="#schedTimed${i}"
                         aria-expanded="false" aria-controls="schedTimed${i}">
                       <span class="flex-fill">${o.title}</span>
                       <span class="text-secondary mx-2 text-nowrap">${o.start}&ThinSpace;–&ThinSpace;${o.end}</span>
                     </button>
-                  </h2>
+                  </h3>
                   <div id="schedTimed${i}" class="accordion-collapse collapse" data-bs-parent="#schedTimed">
                     <div class="accordion-body">
                       ${o.description}
@@ -124,16 +133,32 @@
                 are provided and our experienced crafters are happy to help out. You
                 even get to take your creation home with you.
               `},
-              {title: '🎈 Balloon Twisting', description: 'I am the description'},
+              {title: '🎈 Balloon Twisting', description: `
+                <p>
+                  Extraordinary and colourful sculptures made in moments before your eyes.
+                  Greet our resident balloon master as he travels the event.
+                </p>
+                <p>Make a request and be amazed!</p>
+                <span class="badge text-bg-primary">Contains latex</span>
+              `},
               {title: '🏰 Bouncy Castles', description: `
-                <p>Hop into one of our three bouncy castles and put some spring in your step!</p>
+                <p>
+                  Hop into one of our three bouncy castles and put some spring in your step!
+                </p>
+                <p>Each castle is available for children within a specific age range:</p>
+                <ul>
+                  <li>Ages 3-5</li>
+                  <li>Ages 6-10</li>
+                  <li>Ages 11-14</li>
+                </ul>
                 <div class="d-flex flex-wrap text-secondary" style="column-gap: 16px">
-                  <div class="flex-grow-1"><span class="badge text-bg-primary">Children ages 8-14</span></div>
+                  <div class="flex-grow-1"></div>
                   <div><span class="badge text-bg-light">Sponsor: Chris Lambert Realty</span></div>
                 </div>
               `},
               {title: '👮 Community Representatives', description: `
-                <p>Meet the people who help shape and protect our community. Some of our most important
+                <p>
+                  Meet the people who help shape and protect our community. Some of our most important
                   community representatives are here and excited to say, "Hi!" 👋
                 </p>
                 <ul>
@@ -164,8 +189,12 @@
                   <div><span class="badge text-bg-light">Sponsor: Myers Orléans Nissan</span></div>
                 </div>
               `},
-              {title: '🚨 Touch-a-Truck ', description: 'Another one'},
-              {title: '📚 Zunzun Little Free Library ', description: `
+              {title: '🚨 Touch-a-Truck', description: `
+                This hands-on event lets you touch and learn about a variety of impressive vehicles.
+                Take a photo with a police cruiser, firetruck, and a snowplow thanks to our friends
+                at the police and fire departments, and Worry Free Snowblowing.
+              `},
+              {title: '📚 Zunzun Little Free Library', description: `
                 <p>The Zunzun Little Free Library offers free children's books to encourage a passion for reading.
                 The collection features books in English and French, and showcases local authors. You can also
                 bring your own books from home and contribute them to the collection for others to enjoy!</p>
@@ -176,13 +205,13 @@
               const {title, description} = allDayAttractions[i]
               document.write(`
                 <div class="accordion-item">
-                  <h2 class="accordion-header">
+                  <h4 class="accordion-header">
                     <button class="accordion-button collapsed" type="button"
                         data-bs-toggle="collapse" data-bs-target="#schedAllDay${i}"
                         aria-expanded="false" aria-controls="schedAllDay${i}">
                       ${title}
                     </button>
-                  </h2>
+                  </h4>
                   <div id="schedAllDay${i}" class="accordion-collapse collapse" data-bs-parent="#schedAllDay">
                     <div class="accordion-body">
                       ${description}
@@ -199,9 +228,9 @@
         <h2 class="my-4">Sponsors</h2>
         <p>We are incredibly grateful for the generous support of our local sponsors!</p>
         <a class="sponsor" href="https://www.lauradudas.ca/" target="_blank"><img src="images/sponsors/laura-dudas.png" alt="Councillor Laura Dudas: Orléans West"/></a>
-        <a class="sponsor" href="https://www.myersnissan.ca/"><img class="sponsor" src="images/sponsors/myers-orleans-nissan.png" alt="Myers Orléans Nissan"/></a>
-        <a class="sponsor" href="https://srmechanical.ca/"><img class="sponsor" src="images/sponsors/sr-mechanical.png" alt="S&amp;R Mechanical"/></a>
-        <a class="sponsor" href="https://wfsnow.com/"><img class="sponsor" src="images/sponsors/worry-free-snowblowing.png" alt="Worry Free Snowblowing"/></a>
+        <a class="sponsor" href="https://www.myersnissan.ca/" target="_blank"><img class="sponsor" src="images/sponsors/myers-orleans-nissan.png" alt="Myers Orléans Nissan"/></a>
+        <a class="sponsor" href="https://srmechanical.ca/" target="_blank"><img class="sponsor" src="images/sponsors/sr-mechanical.png" alt="S&amp;R Mechanical"/></a>
+        <a class="sponsor" href="https://wfsnow.com/" target="_blank"><img class="sponsor" src="images/sponsors/worry-free-snowblowing.png" alt="Worry Free Snowblowing"/></a>
       </div>
     </div>
 
